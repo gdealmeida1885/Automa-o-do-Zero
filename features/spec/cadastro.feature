@@ -5,7 +5,7 @@ Funcionalidade: Cadastro do usuário
     Posso fazer meu cadastro com nome, email e senha
     Para que eu possa anunciar meu veiculo usado
 
-@sprint1 @smoke
+@cadastro 
 Cenário: Cadastro simples
 
     Dado que estou na página de cadastro
@@ -15,7 +15,7 @@ Cenário: Cadastro simples
         | senha | 123456                   |
     Então sou autenticado com sucesso
 
-
+@smoke
 Esquema do Cenario: Tentativa de Cadastro
     Dado que estou na página de cadastro
     Quando faço o meu cadastro com

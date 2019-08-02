@@ -8,7 +8,7 @@ Funcionalidade: Login
     Contexto: Página de Login
         Dado que eu acessei a página de login
 
-    @login
+    @login @logout
     Cenario: Login Com Sucesso
         Quando eu faço login com
             | nome  | Gabriel             |
