@@ -5,7 +5,7 @@ Funcionalidade: Cadastro do usuário
     Posso fazer meu cadastro com nome, email e senha
     Para que eu possa anunciar meu veiculo usado
 
-@cadastro 
+@cadastro @clear_user
 Cenário: Cadastro simples
 
     Dado que estou na página de cadastro

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 Dado('que estou na página de cadastro') do
-  #@cadastro.reset_api
   @cadastro.visita
 end
 
 Quando('faço o meu cadastro com') do |table|
   @usuario = table.rows_hash
+  @dao.remover_usuario(@usuario[:email])
   @cadastro.cadastra_usuario(@usuario)
 end
 
