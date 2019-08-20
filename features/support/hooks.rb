@@ -5,11 +5,14 @@ Before do
   @nav = Nav.new
   @cadastro = CadastroPage.new
   @dao = DAO.new
+  @home = HomePage.new
 end
 
-# Before('@clear_user') do
-#   @dao.remover_usuario(@usuario[:email], @dao.conecta_banco)
-# end
+Before('@login') do
+  usuario = { email: 'gabriel@almeida.com', senha: '12345abc' }
+  @login.acessar
+  @login.faz_login(usuario)
+end
 
 After('@logout') do
   @nav.sair

@@ -15,6 +15,12 @@ class Nav
     end
   end
 
+  def botao_anunciar
+    within('.navbar') do
+      click_link 'Vender meu Carro'
+    end
+  end
+
   def sair
     menu_usuario.click
     click_link 'Sair'

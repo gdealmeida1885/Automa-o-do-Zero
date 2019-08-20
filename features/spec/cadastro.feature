@@ -7,7 +7,6 @@ Funcionalidade: Cadastro do usuário
 
 @cadastro @clear_user
 Cenário: Cadastro simples
-
     Dado que estou na página de cadastro
     Quando faço o meu cadastro com
         | nome  | Fernando                 |
