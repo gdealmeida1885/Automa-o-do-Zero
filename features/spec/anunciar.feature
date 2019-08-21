@@ -14,28 +14,30 @@ Funcionalidade: Anunciar Veículo
       | marca     | modelo | versão  | ano  | preço      |
       | Chevrolet | Camaro | Blue 79 | 1979 | 250.000,00 |
     Quando faço o anuncio deste veículo
-    Então vejo a seguinte mensagem de sucesso:
+    Então devo ver a seguinte mensagem:
     """
     Parabéns. Seu carro foi anunciado com sucesso.
     """
-  
+  @login
+  Cenario: Veiculo Blindado
+    E que possuo o seguinte veiculo
+      | marca      | modelo | versão      | ano  | preço      |
+      | Volkswagen | Fusca  | 1.0 Amarelo | 1990 | 10.000,00  |
+    E este veiculo é blindado
+    Quando faço o anuncio deste veículo
+    Então devo ver a seguinte mensagem:
+    """
+    Não anunciamos carros blindados.
+    """
+
+  @login @wip   
   Cenario: Anuncio Duplicado
     E que possuo o seguinte veiculo
       | marca | modelo | versão         | ano  | preço     |
       | Ford  | Fusion | 2.4 Automatico | 2016 | 70.000,00 |
     Mas eu já cadastrei este anúncio anteriormente
-    Então devo ver o seguinte alerta:
-    """
-    Este anúncio já está cadastrado.
-    """
-
-  Cenario: Veiculo Blindado
-    E que possuo o seguinte veiculo
-      | marca     | modelo | versão  | ano  | preço      |
-      | Chevrolet | Camaro | Blue 79 | 1979 | 250.000,00 |
-    E este veiculo é blindado
     Quando faço o anuncio deste veículo
-    Então vejo a seguinte mensagem de sucesso:
+    Então devo ver a seguinte mensagem:
     """
-    Não anunciamos carros blindados.
+    Este anúncio já foi cadastrado.
     """

@@ -26,3 +26,11 @@ class Nav
     click_link 'Sair'
   end
 end
+
+class SweetAlert
+  include Capybara::DSL
+
+  def mensagem_alerta
+    find('.swal2-content')
+  end
+end

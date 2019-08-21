@@ -6,6 +6,8 @@ Before do
   @cadastro = CadastroPage.new
   @dao = DAO.new
   @home = HomePage.new
+  @anuncio = AnuncioPage.new
+  @swal = SweetAlert.new
 end
 
 Before('@login') do

@@ -6,27 +6,31 @@ Dado('que acessei a página de anúncio de veículos') do
 end
 
 Dado('que possuo o seguinte veiculo') do |table|
-  @anuncio = table.hashes
-  @veiculo = @anuncio[0]
-  @veiculo[:marca]
+  @veiculos = table.hashes
 end
 
 Dado('eu já cadastrei este anúncio anteriormente') do
-  pending # Write code here that turns the phrase above into concrete actions
+  steps %(
+    Quando faço o anuncio deste veículo
+    Então devo ver a seguinte mensagem:
+    """
+    Parabéns. Seu carro foi anunciado com sucesso.
+    """
+    Dado que acessei a página de anúncio de veículos
+  )
 end
 
 Dado('este veiculo é blindado') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @blindado = true
 end
 
 Quando('faço o anuncio deste veículo') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @veiculo = @veiculos.first
+  @anuncio.novo_anuncio(@veiculo, @blindado)
 end
 
-Então('vejo a seguinte mensagem de sucesso:') do |_string|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Então('devo ver o seguinte alerta:') do |_string|
-  pending # Write code here that turns the phrase above into concrete actions
+Então('devo ver a seguinte mensagem:') do |mensagem|
+  @mensagem = @swal.mensagem_alerta
+  expect(@mensagem.text).to eql(mensagem)
+  find('.swal2-confirm').click
 end
