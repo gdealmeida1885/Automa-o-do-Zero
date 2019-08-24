@@ -18,7 +18,15 @@ end
 
 After('@logout') do
   @nav.sair
-  wait_until_css('.swal2-modal')
+  sleep 2
+  #wait_until_css('.swal2-modal')
+end
+
+After do |scenario|
+  scenario_name = scenario.name.gsub(/[^A-Za-z0-9 ]/, '').tr(' ', '_').downcase!
+  screenshot = "screenshots/#{scenario_name}.png"
+  page.save_screenshot(screenshot)
+  embed(screenshot, 'image/png', 'Evidencia dos Testes')
 end
 
 def wait_until_css(element, timeout = Capybara.default_max_wait_time)

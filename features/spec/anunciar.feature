@@ -8,7 +8,7 @@ Funcionalidade: Anunciar Veículo
   Contexto: Página de Anuncios
     Dado que acessei a página de anúncio de veículos
   
-  @login
+  @login @logout
   Cenario: Criar Anuncio
     E que possuo o seguinte veiculo
       | marca     | modelo | versão  | ano  | preço      |
@@ -18,7 +18,8 @@ Funcionalidade: Anunciar Veículo
     """
     Parabéns. Seu carro foi anunciado com sucesso.
     """
-  @login
+
+  @login  @wip @logout
   Cenario: Veiculo Blindado
     E que possuo o seguinte veiculo
       | marca      | modelo | versão      | ano  | preço      |
@@ -27,10 +28,10 @@ Funcionalidade: Anunciar Veículo
     Quando faço o anuncio deste veículo
     Então devo ver a seguinte mensagem:
     """
-    Não anunciamos carros blindados.
+    Não vendemos carro blindado.
     """
 
-  @login @wip   
+  @login  @wip @logout
   Cenario: Anuncio Duplicado
     E que possuo o seguinte veiculo
       | marca | modelo | versão         | ano  | preço     |
@@ -41,3 +42,4 @@ Funcionalidade: Anunciar Veículo
     """
     Este anúncio já foi cadastrado.
     """
+

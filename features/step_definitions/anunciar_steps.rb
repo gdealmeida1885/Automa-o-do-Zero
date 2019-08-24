@@ -7,6 +7,7 @@ end
 
 Dado('que possuo o seguinte veiculo') do |table|
   @veiculos = table.hashes
+  DAO.new.remove_anuncio(@veiculos[0][:versão])
 end
 
 Dado('eu já cadastrei este anúncio anteriormente') do

@@ -5,6 +5,7 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'faker'
 require 'pry'
+require 'syntax'
 
 Capybara.configure do |c|
   c.default_driver = :selenium_chrome
